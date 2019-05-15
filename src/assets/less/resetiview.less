@@ -1,0 +1,62 @@
+/**
+ * 重置 iview-weapp 组件的样式
+ */
+
+// a
+a {
+  display: inline !important;
+  color: #01458e !important;
+  background-color: transparent;
+  font-size: @f-sm;
+
+  &.a-underline {
+    text-decoration: underline;
+    font-size: @f-md;
+  }
+}
+
+// grid
+.vi-grid {
+  border: none !important;
+}
+
+i-grid {
+  width: 100%;
+  border: none;
+}
+
+.vi-grid-item {
+  border: none !important;
+  padding: 8px !important;
+  overflow: visible !important;
+  white-space: nowrap;
+}
+
+.vi-grid-label {
+  text-overflow: initial !important;
+}
+
+i-tab-bar {
+  width: 100%;
+}
+
+// radio,
+.vi-radio,
+.vi-checkbox,
+{
+  font-size: 20px;
+  display: inline-block;
+}
+
+i-radio,
+i-checkbox {
+  display: block;
+  transform: scale(0.52); // overflow: hidden;
+}
+
+.check-primary {
+  position: absolute;
+  bottom: -13px;
+  right: -13rpx;
+  font-size: 20px !important;
+}

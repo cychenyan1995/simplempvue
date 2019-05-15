@@ -1,0 +1,37 @@
+// 文本类型
+.font(@type: content) {
+  @size: e("f-@{type}-size");
+  @color: e("f-@{type}-color");
+
+  font-size: @@size;
+  color: @@color;
+}
+
+// 图片
+.icon(@name, @w, @h) when (ispixel(@h)) {
+  .icon-@{name} {
+    background: url("../images/@{name}.png") no-repeat;
+    background-size:100%;
+    width: @w;
+    height: @h;
+  }
+}
+.icon(@name, @w) {
+  .icon(@name, @w, @w);
+}
+.icon(@name, @w, active) {
+  .icon(@name, @w, @w, active);
+}
+.icon(@name, @w, @h, active) {
+  // @active: e("@{name}-active");
+  // .icon(@active, @w, @h);
+  
+  .icon(@name, @w, @h);
+
+  .icon-@{name}.active {
+    background: url("../images/@{name}-active.png") no-repeat;
+    background-size:100%;
+    width: @w;
+    height: @h;
+  }
+}

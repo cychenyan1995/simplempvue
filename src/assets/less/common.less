@@ -1,0 +1,229 @@
+/**
+ * 项目公共样式
+ */
+
+@import url(variable.less);
+@import url(mixin.less);
+@import url(resetwx.less);
+@import url(resetiview.less);
+@import url(icon.less);
+
+.text {
+  &-center {
+    text-align: center;
+  }
+  &-left {
+    text-align: left !important;
+  }
+  &-right {
+    text-align: right;
+  }
+}
+
+.bold {
+  font-weight: bold !important;
+}
+
+.text-primary {
+  color: @color-primary;
+}
+
+
+.text-overflow {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.pull {
+  &-left {
+    float: left;
+  }
+  &-right {
+    float: right;
+  }
+}
+
+.clearfix {
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+.flex {
+  display: flex;
+  .flex-item {
+    flex: 1;
+  }
+  .flex-basis {
+    flex-basis: auto;
+  }
+}
+
+
+/* form */
+
+form {
+  padding: 10px @pd-fat;
+  display: block;
+}
+
+.form {
+  &-item {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    border-bottom: @input-border;
+    padding: 10px 0 5px 0;
+    box-sizing: border-box;
+
+    +.form-item {
+      margin-top: 20px;
+    }
+
+    &-mult {
+      .form-item {
+        &:first-child {
+          position: relative;
+          &:after {
+            content: '';
+            display: block;
+            background: #fff;
+            width: 30px;
+            height: 8px;
+            position: absolute;
+            bottom: -1px;
+            right: -30px;
+          }
+        }
+      }
+    }
+
+    .form-item {
+      // padding-top: 0;
+      // padding-bottom: 0;
+      margin: -10px 30px -6px 0;
+      border-bottom: none;
+
+      &:last-of-type {
+        margin-right: 0 !important;
+      }
+    }
+    .icon-scan,
+    .vali-btn {
+      position: absolute !important;
+      right: 0;
+      margin: 13px 0 !important;
+      z-index: 10;
+    }
+    .icon-scan {
+      top: 7px;
+      margin: 0 !important;
+    }
+    .vali-btn {
+      top: -10px;
+    }
+  }
+  &-label,
+  &-unit {
+    flex-basis: auto;
+    white-space: nowrap;
+  }
+  &-label {
+    font-size: @f-content-size;
+    color: @color-title;
+  }
+  &-unit {
+    .font(desc);
+  }
+  &-value {
+    flex: 1;
+  }
+}
+// 关联验证码的 input
+.input-btn-group {
+  justify-content:center;
+  .form-item{
+    width: 50%;
+  }
+  i-button{
+    position:absolute;
+    top:0;
+    right:0;
+    z-index:1000;
+  }
+}
+
+.block-desc {
+  width: 100%;
+  .font(desc)
+}
+
+// 协议
+.agreement {
+  .block-desc;
+  text-align: center;
+  margin: 20px 0 50px;
+}
+
+// panel
+.panel {
+  background-color: #FFF;
+  +.panel {
+    margin-top: 5px;
+  }
+
+  &-header {
+    padding: 10px 15px 0;
+    text-align: center;
+    font-weight: 500;
+  }
+  &-body {
+    padding: 10px;
+  }
+
+  &-thin {
+    @thin: 30px;
+    padding-left: @thin;
+    padding-right: @thin;
+  }
+
+  &-long {
+    @mg: -10px;
+    margin-left: @mg;
+    margin-right: @mg;
+  }
+}
+
+.btn-bar {
+  text-align: center;
+}
+
+
+// position
+.relative {
+  position: relative;
+}
+
+.fixed-bottom {
+  position: fixed;
+}
+
+.abs-bottom {
+  position: absolute;
+}
+
+.fixed-bottom,
+.abs-bottom {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  text-align: center;
+}
+
+.scroll-loading {
+  padding-bottom: 10px;
+}
